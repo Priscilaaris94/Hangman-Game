@@ -2,32 +2,57 @@
 <html>
     <head>
         <title>Hangman</title>
+        <!-- link reset -->
         <link rel="reset" type="text/css" href="assets/css/reset.css">
+        <!-- link css -->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-     
     </head>
     <body>
-        <div class="main-title">
-        <h1>Hangman Toon Ville</h1>
-        <h2>90's</h2>
-        </div>
 
-        <div class="jumbotron text-center"></div>
-
-        <div class="main-content">   
-        <div class="row">
-        <div class="col-sm-6">
+    <div class="container">
+        <header>
+            <h1>Hangman</h1>
             
-            <p>Press Any Key To Get Stated!</p>
-            <p>Wins</p>
-            <p>Current Word</p>
-            <p>Number Of Guesses Remaining</p>
-            <p>Letters Already Guessed</p>
-
-        </div>
-        </div>
-        </div>
-
+            <h2>Rock n Roll</h2>
+            <p class="button">Press any key to start</p>
+            <div class="w3-content w3-display-container">
+                
+                    <img class="mySlides" src="assets/images/blondie.jpeg" width="200px" height="200px" >
+                    <img class="mySlides" src="assets/images/heart.jpg">
+                    <img class="mySlides" src="assets/images/journey.jpg">
+                    <img class="mySlides" src="assets/images/pinkfloyd.jpg">
+                
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+                    <script>
+                    var slideIndex = 1;
+                    showDivs(slideIndex);
+                
+                    function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                    }
+                
+                   function showDivs(n) {
+                   var i;
+                   var x = document.getElementsByClassName("mySlides");
+                   if (n > x.length) {slideIndex = 1}    
+                   if (n < 1) {slideIndex = x.length}
+                   for (i = 0; i < x.length; i++) {
+                   x[i].style.display = "none";  
+                   }
+                  x[slideIndex-1].style.display = "block";  
+                  }
+                  </script>
+        </header>
         
-    </body>
-</html>
+        <div class="underscore">_ _ _ _ </div>
+      
+        <div class="rightGuess">right guess</div>
+        
+        <div class="wrongGuess">wrong guess</div>
+    </div>
+    <!--javascript -->
+    <script src="assets/javascript/game.js"></script>
+</body>
+    </html>
